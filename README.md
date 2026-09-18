@@ -1,288 +1,392 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M1
-# IAPR-1- Module 1 - FoC
-## 1. Implementation of basic C programs using Literals,Consonants, Variables, Data types.
-## 2. Implementation of different categories of operators.
-# Ex.No:1
-  Build a C program to demonstrate the usage of different types of literals: integer, float, character, and string.  
-# Date : 
-# Aim:
-To build a C program that prints integer, float,character, and string literals on the console using the printf() function.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Inside the main() function, use printf() to display each literal along with its size in bytes using sizeof() :
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+## 3. Implementation of programs using conditional statements.
+## 4. Implementation of programs using various control statements.
+# Ex.No:6
+  Build a C program to input a student’s marks in three subjects (Math, Science, and English). Calculate the average marks and determine the grade using nested if-else statements with safe floating-point comparisons based on the following grading criteria:
+    
+  A: 90 and above
   
-   3.1 Integer literal (e.g., 10) using `%d`
-   
-   3.2 Float literal (e.g., 3.14) using `%f`
-   
-   3.3 Character literal (e.g., 'A') using `%c`
-   
-   3.4 String literal (e.g., "Hello C") using `%s`
-   
+  B: 75 to 89.99
+  
+  C: 50 to 74.99
+  
+  F: below 50
+  
+  The program should display the average marks up to two decimal places and the corresponding grade. 
+  
+# Date : 
+# Aim:
+ To build a C program that receives inputs for a student’s marks in three subjects, calculates the average, and determines the grade using nested if-else statements with safe floating-point comparisons.
+# Algorithm:
+### Step 1:
+  Start
+### Step 2: 
+  Include the standard input-output library: #include<stdio.h>.
+### Step 3: 
+  Declare float variables math, science, english to store marks of each subject.
 ### Step 4: 
-   Stop
+  Declare a float variable average to store the average marks.
+### Step 5: 
+  Prompt the user to enter marks for Math, Science, and English.
+### Step 6: 
+  Read the input marks.
+### Step 7: 
+  Calculate the average marks using the formula:
+   
+  average=(math + science + english​)/3.0f
+### Step 8: 
+  Check if average is greater than or equal to 90.0f
+
+  If yes, print Grade A.
+
+  Else, proceed to Step 9.  
+### Step 9:
+  Check if average is greater than or equal to 75.0f
+
+  If yes, print Grade B.
+
+  Else, proceed to Step 10.
+### Step 10:
+  Check if average is greater than or equal to 50.0f
+
+  If yes, print Grade C.
+
+  Else, print Grade F.
+### Step 11:
+  Stop
 # Program:
 ```c
     #include <stdio.h>
     
     int main()
     {
-        printf("Integer Literal = %d\n", 10);
-        printf("Size of Integer Literal = %zu bytes\n\n", sizeof(10));
+        float math, science, english, average;
     
-        printf("Float Literal = %f\n", 3.14);
-        printf("Size of Float Literal = %zu bytes\n\n", sizeof(3.14));
+        printf("Enter marks in Math, Science and English: ");
+        scanf("%f %f %f", &math, &science, &english);
     
-        printf("Character Literal = %c\n", 'A');
-        printf("Size of Character Literal = %zu bytes\n\n", sizeof('A'));
+        average = (math + science + english) / 3.0;
     
-        printf("String Literal = %s\n", "Hello C");
-        printf("Size of String Literal = %zu bytes\n", sizeof("Hello C"));
+        if (average >= 90.0)
+        {
+            printf("Average Marks = %.2f\n", average);
+            printf("Grade = A\n");
+        }
+        else
+        {
+            if (average >= 75.0)
+            {
+                printf("Average Marks = %.2f\n", average);
+                printf("Grade = B\n");
+            }
+            else
+            {
+                if (average >= 50.0)
+                {
+                    printf("Average Marks = %.2f\n", average);
+                    printf("Grade = C\n");
+                }
+                else
+                {
+                    printf("Average Marks = %.2f\n", average);
+                    printf("Grade = F\n");
+                }
+            }
+        }
     
         return 0;
     }
 ```
 # Output:
-<img width="458" height="458" alt="image" src="https://github.com/user-attachments/assets/37bfcdc2-0f12-437b-8a8c-d4477f20a1c6" />
+<img width="612" height="332" alt="image" src="https://github.com/user-attachments/assets/81b3b670-8667-423f-b2f7-6e7f611e5120" />
+
+# Result: 
+Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:7
+  Develop a C program to display the multiplication table of a given number (15) up to 10.
+# Date : 
+# Aim:
+ To develop a C program that prints the multiplication table of the number 15 up to 10 using a for loop.
+# Algorithm:
+### Step 1:
+  Start
+### Step 2: 
+  Include the standard input-output library: #include<stdio.h>.
+### Step 3: 
+  Declare an integer variable number and initialize it with 15.
+### Step 4: 
+  Declare another integer variable i to use as a loop counter.
+### Step 5: 
+  Use a for loop to iterate from i = 1 to i = 10.
+  
+  In each iteration:
+  
+  a. Multiply number by i.
+  
+  b. Print the result in the format: number x i = result.
+### Step 6: 
+  Stop
+
+# Program:
+```c
+      #include <stdio.h>
+      
+      int main()
+      {
+          int i;
+      
+          printf("Multiplication Table of 15\n");
+      
+          for(i = 1; i <= 10; i++)
+          {
+              printf("15 x %d = %d\n", i, 15 * i);
+          }
+      
+          return 0;
+      }
+```
+# Output:
+<img width="510" height="460" alt="image" src="https://github.com/user-attachments/assets/47995a05-42de-4198-8475-ac6e906561c8" />
+
+# Result: 
+Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:8
+  Develop a C program to check whether a given number is prime or not.
+# Date : 
+# Aim:
+ To develop a C program that determines whether an input number is a prime number using a while loop.
+# Algorithm:
+### Step 1:
+  Start
+### Step 2: 
+  Include the standard input-output library: #include<stdio.h>.
+### Step 3: 
+  Declare integer variables:
+  
+  n to store the number entered by the user.
+  
+  i to use as a counter (initialize to 2).
+  
+  f as a flag to indicate whether the number is divisible (initialize to 0).
+### Step 4: 
+  Read the value of n from the user.
+### Step 5: 
+  Use a while loop to iterate while i <= n-1:
+  
+  Check if n % i == 0:
+
+  If yes, set f = 1 (number is not prime) and break the loop.
+  
+  Increment i by 1.
+### Step 6: 
+  After the loop:
+  
+  If f == 0, print that the number is prime.
+  
+  Else, print that the number is not prime.
+### Step 7:   
+  Stop
+# Program:
+```c
+    #include <stdio.h>
+    
+    int main()
+    {
+        int n, i, flag = 0;
+    
+        printf("Enter a number: ");
+        scanf("%d", &n);
+    
+        if (n <= 1)
+        {
+            printf("%d is not a Prime Number\n", n);
+        }
+        else
+        {
+            for (i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+    
+            if (flag == 0)
+                printf("%d is a Prime Number\n", n);
+            else
+                printf("%d is not a Prime Number\n", n);
+        }
+    
+        return 0;
+    }
+```
+# Output:
+<img width="425" height="275" alt="image" src="https://github.com/user-attachments/assets/5d608fed-750f-4c0b-a1f1-2150858ca99d" />
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd
-# IAPR-1- Module 1 - FoC
-# Ex.No:2
-  Build a C program to display the value of a macro constant and a constant variable.
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:9
+  Generate the C code to display the pattern below.  
+ ``` 
+ 12345  
+ 2   4  
+ 3   3  
+ 4   2  
+ 54321
+ ```
 # Date : 
 # Aim:
-  To build a C program that demonstrates the use of macro constants and constant variables.
+ To build a C program that prints the required numeric pattern for a given value of n using nested loops.
 # Algorithm:
 ### Step 1:
-  Start  
+  Start
 ### Step 2: 
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
-  Define a macro constant `PI` with value `3.14159` using `#define`.
+  Declare variables i, j, n, and k.
 ### Step 4: 
-   Inside `main()`:
-   
-   4.1 Declare a constant integer variable `DAYS`
-   
-   4.2 Initialize it with the value `7`
-   
-### Step 5:  
-  Use `printf()` to display the values of `PI` and `DAYS`.     
+  Read the value of n from the user.
+### Step 5: 
+  Set i = 1.
 ### Step 6:  
-  Stop
-# Program:
-```c
-    #include <stdio.h>
-    
-    #define PI 3.14
-    
-    int main()
-    {
-        const int MAX = 100;
-    
-        printf("Macro Constant PI = %.2f\n", PI);
-        printf("Constant Variable MAX = %d\n", MAX);
-    
-        return 0;
-    }
-```
-# Output:
-<img width="612" height="252" alt="image" src="https://github.com/user-attachments/assets/462ffc6f-c265-461a-b1da-5458d05de4bc" />
-
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
-
-
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd
-# IAPR-1- Module 1 - FoC
-# Ex.No:3
-  Build a C program to demonstrate the use of different data types such as int, float, double, and char, and display their values using printf().
-# Date : 
-# Aim:
-  To build a C program that declares variables of various data types—integer, float, double, and character—initializes them, and prints their values on the screen.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Inside main(), declare and initialize variables of types int, float, double, and char.
-### Step 4: 
-   Display their values using printf().
-### Step 5:    
-   Stop
-# Program:
-```c
-    #include <stdio.h>
-    
-    int main()
-    {
-        int num = 25;
-        float f = 12.5f;
-        double d = 123.456;
-        char ch = 'A';
-    
-        printf("Integer Value = %d\n", num);
-        printf("Float Value = %.2f\n", f);
-        printf("Double Value = %lf\n", d);
-        printf("Character Value = %c\n", ch);
-    
-        return 0;
-    }
-```
-# Output:
-<img width="518" height="260" alt="image" src="https://github.com/user-attachments/assets/1e350f4f-b4ec-432f-b33a-170a6b95228c" />
-
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
-
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd
-# IAPR-1- Module 1 - FoC
-# Ex.No:4
-  Build a C program to perform arithmetic and bitwise operations on two integers entered by the user. The program should display: Arithmetic operations: addition, subtraction, multiplication, division, and remainder. Bitwise operations: AND, OR, XOR, left shift, right shift, and NOT.
-# Date : 
-# Aim:
-  To build a C program that takes two integers as input and demonstrates the arithmetic and bitwise operations, displaying the results of each operation.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare two integer variables a and b.
-### Step 4: 
-   Prompt the user to enter two integers and read the input using scanf().
-### Step 5:    
-   Perform arithmetic operations on a and b:
-   #### Sum (a + b)
-   #### Difference (a - b)
-   #### Product (a * b)
-   #### Quotient (a / b)
-   #### Remainder (a % b)
-### Step 6: 
-  Perform bitwise operations on a and b:
-  #### AND (a &amp; b)
-  #### OR (a | b)
-  #### XOR (a ^ b)
-  #### Left shift (a << b)
-  #### Right shift (a >> b)
-  #### Bitwise NOT of a (~a) and b (~b)
-### Step 7:   
-  Display the results of all operations using printf().
+  Repeat the following steps until i > n:
+  
+  Step 6.1: For j from i to n, print j if i == 1 or j == i, otherwise print a space.
+  
+  Step 6.2: Set k = j - 2.
+  
+  Step 6.3: For j from 1 to i - 1, print k if i == n or j == i - 1, otherwise print a space.
+  
+  Step 6.4: Decrease k after each print.
+  
+  Step 6.5: Move to the next line.
+  
+### Step 7: 
+  Increase i and repeat Step 6.
 ### Step 8:   
   Stop
 # Program:
 ```c
-    #include <stdio.h>
-    
-    int main()
+printf("12345\n");
+
+for(i = 2; i <= 4; i++)
+{
+    printf("%d", i);
+
+    for(j = 1; j <= 3; j++)
     {
-        int a, b;
-    
-        printf("Enter two integers: ");
-        scanf("%d %d", &a, &b);
-    
-        printf("\nArithmetic Operations\n");
-        printf("Addition = %d\n", a + b);
-        printf("Subtraction = %d\n", a - b);
-        printf("Multiplication = %d\n", a * b);
-        printf("Division = %d\n", a / b);
-        printf("Remainder = %d\n", a % b);
-    
-        printf("\nBitwise Operations\n");
-        printf("AND = %d\n", a & b);
-        printf("OR = %d\n", a | b);
-        printf("XOR = %d\n", a ^ b);
-        printf("Left Shift (a << 1) = %d\n", a << 1);
-        printf("Right Shift (a >> 1) = %d\n", a >> 1);
-        printf("NOT of a = %d\n", ~a);
-    
-        return 0;
+        printf(" ");
     }
+
+    printf("%d\n", 6 - i);
+}
+
+printf("54321\n");
+
+return 0;
 ```
 # Output:
-
-<img width="412" height="630" alt="image" src="https://github.com/user-attachments/assets/93724fa1-a837-4d48-8de6-334e5dbd1ed9" />
+<img width="527" height="387" alt="image" src="https://github.com/user-attachments/assets/5b283b63-7ee9-472b-98a9-25c961e72626" />
 
 # Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+  Thus, the program was implemented and executed successfully, and the required output was obtained.
 
+  
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:10
+  Generate the C code to display the pattern below.  
+  ```
+ 0
+ 
+ 7  0  7
+ 
+ 6  7  0  7  6
+ 
+ 5  6  7  0  7  6  5
+ 
+ 4  5  6  7  0  7  6  5  4
+ 
+ 3  4  5  6  7  0  7  6  5  4  3
+ 
+ 2  3  4  5  6  7  0  7  6  5  4  3  2
+ 
+ 1  2  3  4  5  6  7  0  7  6  5  4  3  2  1
+```
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd
-# IAPR-1- Module 1 - FoC
-# Ex.No:5
-  Develop a C program to check whether a given character is a vowel, consonant, digit, or special symbol using the ternary operator.
-# Date : 
-# Aim:
-  To develop and implement a C program that classifies a character as a vowel, consonant, digit, or special symbol using the ternary operator.
+# Aim: 
+  To formulate a C program to print a symmetric numeric pattern in which each row contains an increasing sequence of numbers from the row value up to 7, followed by 0 in the center, and then a decreasing sequence of numbers back to the row value.
 # Algorithm:
 ### Step 1:
   Start
 ### Step 2: 
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
-  Input a character ch from the user.
+  Declare integer variables i and j.
 ### Step 4: 
-   Check if ch is a digit ('0' to '9').
-   
-   If true → Print "Digit" → Go to Step 8.
-   
-   If false → Go to Step 5.
-   
-### Step 5:    
-   Check if ch is an alphabet letter ('A' - 'Z' or 'a' – 'z').
-   
-   If true → Go to Step 6.
-   
-   If false → Go to Step 7.
-   
-### Step 6: 
-   Check if ch is a vowel (a, e, i, o, u or A, E, I, O, U).
-   
-   If true → Print "Vowel" → Go to Step 8.
-   
-   If false → Print "Consonant" → Go to Step 8.
-   
-### Step 7:   
-   Print "Special Symbol".
-### Step 8:   
+  Print 0 on the first line.
+### Step 5:
+  Set i = 7.
+### Step 6:
+   Repeat Steps 6.1 to 6.4 while `i >= 1`:
+
+   Step 6.1: For `j = i` to `7`, print `j`.
+
+   Step 6.2: Print `0` in the center.
+
+   Step 6.3: For `j = 7` down to `i`, print `j`.
+
+   Step 6.4: Move to the next line.
+### Step 7:
+  Decrease i by 1 and go back to Step 6.
+### Step 8:
   Stop
+
 # Program:
 ```c
     #include <stdio.h>
     
     int main()
     {
-        char ch;
+        int i, j;
     
-        printf("Enter a character: ");
-        scanf("%c", &ch);
+        printf("0\n");
     
-        (ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||
-         ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
-            ? printf("%c is a Vowel\n", ch)
-            : ((ch>='A'&&ch<='Z')||(ch>='a'&&ch<='z'))
-                ? printf("%c is a Consonant\n", ch)
-                : (ch>='0'&&ch<='9')
-                    ? printf("%c is a Digit\n", ch)
-                    : printf("%c is a Special Symbol\n", ch);
+        for(i = 7; i >= 1; i--)
+        {
+            for(j = i; j <= 7; j++)
+            {
+                printf("%d ", j);
+            }
+    
+            printf("0 ");
+    
+            for(j = 7; j >= i; j--)
+            {
+                printf("%d ", j);
+            }
+    
+            printf("\n");
+        }
     
         return 0;
     }
 ```
 # Output:
+<img width="562" height="392" alt="image" src="https://github.com/user-attachments/assets/82022689-a566-4a3d-9df8-9cd00edaa6f5" />
 
-<img width="472" height="311" alt="image" src="https://github.com/user-attachments/assets/1fc290c2-4c00-47a9-9856-9933b4ca5158" />
-
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
-
+# Result:
+  Thus, the program was implemented and executed successfully, and the required output was obtained.
 
